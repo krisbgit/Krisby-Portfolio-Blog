@@ -8,10 +8,10 @@ body {
     background-color: bisque;
 }
 
-.dark {
+.dark h1 {
     color: brown;
 }
 
-.light {
+.light h1 {
     color: chocolate;
 }
