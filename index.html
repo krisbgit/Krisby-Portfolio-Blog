@@ -2,10 +2,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="stylesheet" href="themes\styles\styles.css"></link>
+    <link rel="stylesheet" href="themes\styles\styles.css"></link>
+    <script src="https://kit.fontawesome.com/3a9157eedb.js" crossorigin="anonymous"></script>
+    
+    <script>
+        function dark_light_mode_set() {
+            const this_button = document.getElementById("mode_button")
+            switch  (this_button.className) {
+                case "dark":
+                    this_button.classList.remove("dark")
+                    this_button.classList.add("light", "rotate-vert-center");
+                    this_button.addEventListener("animationend", animationFinished);
+
+                    styled_items = document.getElementsByClassName("dark");
+                    for (let i = 0; i < styled_items.length; i++) {
+                        styled_items.item(i).className = "light";
+                    }
+
+                    break;
+                case "light":
+                    this_button.classList.remove("light")
+                    this_button.classList.add("dark", "rotate-vert-center");
+                    this_button.addEventListener("animationend", animationFinished);
+
+                    styled_items = document.getElementsByClassName("light");
+                    for (let i = 0; i < styled_items.length; i++) {
+                        styled_items.item(i).className = "dark";
+                    }
+                    break;
+                }
+        }
+        function animationFinished() {
+            const this_button = document.getElementById("mode_button");
+            this_button.classList.remove("rotate-vert-center");
+        }
+    </script>
+    
     <title>Document</title>
 </head>
+<<<<<<< HEAD
 <body>
     <h1 class="dark">Krisby Portfolio</h1>
+=======
+<body class="dark">
+    <h1 id="line" class="dark">Krisby Portfolio</h1>
+    <button type="button" class="dark" id="mode_button" onclick="dark_light_mode_set()"><i class="fa-solid fa-circle-half-stroke fa-flip-horizontal fa-2xl"></i></button>
+>>>>>>> 5a4ea95 (home page html)
 </body>
 </html>
